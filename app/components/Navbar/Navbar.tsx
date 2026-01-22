@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-import pabLogo from "../../../Logo/pablogo.png";
-
+// ✅ RELATIVE IMPORT (Vercel-safe, case-correct)
+import pabLogo from "../../Logo/pablogo.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,24 +42,24 @@ export const Navbar = () => {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src={pabLogo}
-              alt="PCL Logo"
+              alt="PABSON Cricket League Logo"
               width={scrolled ? 48 : 64}
               height={scrolled ? 48 : 64}
               className="transition-all duration-300 w-auto"
               priority
             />
 
-            {/* Logo Text */}
+            {/* LOGO TEXT */}
             <div
               className={`flex flex-col transition-opacity duration-300 ${
                 scrolled ? "opacity-100" : "opacity-0 md:opacity-100"
               }`}
             >
               <span className="text-lg font-black tracking-tight text-slate-900 leading-none">
-                PCL <span className="text-red-600">U-15</span>
+                PABSON <span className="text-red-600">U-15</span>
               </span>
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
-                Official League
+                Cricket League
               </span>
             </div>
           </Link>
