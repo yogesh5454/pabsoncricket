@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-// 👇 IMPORT IMAGE FROM app/logo
-import pabLogo from "@/app/logo/pablogo.png";
+import pabLogo from "../../../Logo/pablogo.png";
+
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
