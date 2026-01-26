@@ -1,5 +1,6 @@
 {
-  "name": "pabsoncricket",
+  "name": "pabson-cricket-league",
+  "description": "Pabson Cricket League is a premier school-level cricket tournament showcasing the best young cricketing talent. Follow live scores, match schedules, player stats, and highlights of the thrilling competition, all in one platform.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
