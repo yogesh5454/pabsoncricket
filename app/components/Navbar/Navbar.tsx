@@ -3,29 +3,72 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+  import { useRouter, usePathname } from "next/navigation"; // add this
 
-// ✅ RELATIVE IMPORT (Vercel-safe, case-correct)
 import pabLogo from "../../Logo/pablogo.png";
 
-export const Navbar = () => {
+interface NavLink {
+  name: string;
+  href: string; // section ID
+}
+
+export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("hero"); // NEW
 
+  const navLinks: NavLink[] = [
+    { name: "Home", href: "hero" },
+    { name: "Teams", href: "teams" },
+    { name: "Fixtures", href: "schedule" },
+    { name: "Result", href: "results" },
+    { name: "Gallery", href: "gallery" },
+    { name: "Contact", href: "contact" },
+  ];
+
+  // Scroll handler for navbar background and active section
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      // Detect active section
+      const sections = navLinks.map((link) =>
+        document.getElementById(link.href)
+      );
+
+      sections.forEach((section, i) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 80 && rect.bottom >= 80) {
+            setActiveSection(navLinks[i].href);
+          }
+        }
+      });
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Teams", href: "/teams" },
-    { name: "Fixtures", href: "/#fixtures" },
-    { name: "Gallery", href: "/#gallery" },
-    { name: "Contact", href: "/#contact" },
-  ];
+
+const router = useRouter();
+const pathname = usePathname();
+
+const handleScrollTo = (id: string) => {
+  if (pathname !== "/") {
+    // Navigate to home first, then scroll
+    router.push(`/#${id}`); // Next.js automatically preserves hash scroll
+    setIsOpen(false);
+  } else {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false);
+    }
+  }
+};
+
 
   return (
     <nav
@@ -39,7 +82,10 @@ export const Navbar = () => {
         <div className="flex justify-between items-center">
 
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3">
+          <div
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={() => handleScrollTo("hero")}
+          >
             <Image
               src={pabLogo}
               alt="PABSON Cricket League Logo"
@@ -49,7 +95,6 @@ export const Navbar = () => {
               priority
             />
 
-            {/* LOGO TEXT */}
             <div
               className={`flex flex-col transition-opacity duration-300 ${
                 scrolled ? "opacity-100" : "opacity-0 md:opacity-100"
@@ -62,18 +107,22 @@ export const Navbar = () => {
                 Cricket League
               </span>
             </div>
-          </Link>
+          </div>
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-bold uppercase tracking-wide text-slate-600 hover:text-red-600 transition-colors"
+                onClick={() => handleScrollTo(link.href)}
+                className={`text-sm font-bold uppercase tracking-wide transition-colors ${
+                  activeSection === link.href
+                    ? "text-red-600"
+                    : "text-slate-600 hover:text-red-600"
+                }`}
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -99,14 +148,17 @@ export const Navbar = () => {
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
-                <Link
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-lg font-bold text-slate-700 hover:text-red-600 hover:bg-slate-50 px-4 py-3 rounded-xl transition-all"
+                  onClick={() => handleScrollTo(link.href)}
+                  className={`block w-full text-left text-lg font-bold px-4 py-3 rounded-xl transition-all ${
+                    activeSection === link.href
+                      ? "text-red-600"
+                      : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
+                  }`}
                 >
                   {link.name}
-                </Link>
+                </button>
               ))}
             </div>
           </motion.div>

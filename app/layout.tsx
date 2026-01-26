@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "https://pabsoncricketleague.com/pablogo.ico",
-    shortcut: "https://pabsoncricketleague.com/favicon.png",
+    shortcut: "https://pabsoncricketleague.com/favicon.ico",
   },
 
   openGraph: {

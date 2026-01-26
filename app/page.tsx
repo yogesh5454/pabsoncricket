@@ -9,21 +9,27 @@ import { Sponsors } from "./components/Sponsors/Sponsors";
 import { About } from "./components/About/About";
 import { Gallery } from "./components/Gallery/Gallery";
 import { Contact } from "./components/Contact/Contact";
+import { Results } from "./components/Results/Results";
 
-
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
-      <Hero />
-      <About />
-      <Teams />
-      <Schedule />
-      <PointsTable />
-      <Sponsors />
-      <Gallery />
-      <Contact />
+
+      {/* Sections with IDs for smooth scrolling */}
+      <section id="hero"><Hero /></section>
+      <section id="about"><About /></section>
+      <section id="teams"><Teams /></section>
+      <section id="schedule"><Schedule /></section>
+      <section id="results"><Results /></section>
+      <section id="points"><PointsTable /></section>
+      <section id="sponsors"><Sponsors /></section>
+      <section id="gallery"><Gallery /></section>
+      <section id="contact"><Contact /></section>
+
       <Footer />
     </main>
   );
-}
+};
+
+export default Home;

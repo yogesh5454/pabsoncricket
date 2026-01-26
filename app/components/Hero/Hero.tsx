@@ -6,6 +6,12 @@ import { ChevronRight, Calendar, MapPin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 export const Hero = () => {
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-50">
       {/* Background Shapes */}
@@ -46,18 +52,18 @@ export const Hero = () => {
                 asChild
                 className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-7 rounded-2xl font-bold text-lg shadow-xl shadow-blue-900/20 transition-all hover:-translate-y-1"
               >
-                <Link href="/#fixtures">
+                <div onClick={() => handleScrollTo("schedule")} className="cursor-pointer">
                   Match Schedule <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
+                </div>
               </Button>
               <Button 
                 variant="outline"
                 asChild
                 className="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-7 rounded-2xl font-bold text-lg transition-all hover:border-slate-300"
               >
-                <Link href="/#points-table">
+                <div onClick={()=>handleScrollTo("points")} className="cursor-pointer" >
                   Points Table
-                </Link>
+                </div>
               </Button>
             </div>
 
