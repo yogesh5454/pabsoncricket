@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Shield, User } from "lucide-react";
+import React from 'react';
+import { Shield, User } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -9,93 +9,93 @@ import {
   DialogTitle,
   DialogDescription,
   DialogTrigger,
-} from "@/app/components/ui/dialog";
-import { Button } from "@/app/components/ui/button";
+} from '@/app/components/ui/dialog';
+import { Button } from '@/app/components/ui/button';
 
 export const Teams = () => {
   const teams = [
-   { 
-        id: 1, 
-        name: "Kathmandu Lions", 
-        school: "Apex Academy", 
-        color: "bg-orange-50", 
-        accent: "text-orange-600",
-        logoColor: "bg-orange-500",
-        coach: "Ramesh Bhatta",
-        squad: [
-            { name: "Aarav Sharma (C)", role: "Batsman" },
-            { name: "Bibek Thapa", role: "Bowler" },
-            { name: "Rohit Paudel", role: "All-Rounder" },
-            { name: "Kushal Bhurtel", role: "WK" },
-            { name: "Dipendra Airee", role: "Batsman" },
-            { name: "Sandeep Lamichhane", role: "Bowler" },
-            { name: "Sompal Kami", role: "All-Rounder" },
-            { name: "Karan KC", role: "All-Rounder" },
-            { name: "Gyanendra Malla", role: "Batsman" },
-            { name: "Paras Khadka", role: "All-Rounder" },
-            { name: "Binod Das", role: "Bowler" },
-            { name: "Sharad Vesawkar", role: "Batsman" },
-            { name: "Basant Regmi", role: "Bowler" },
-            { name: "Shakti Gauchan", role: "Bowler" },
-            { name: "Subash Khakurel", role: "WK" },
-        ]
+    {
+      id: 1,
+      name: 'Kathmandu Lions',
+      school: 'Apex Academy',
+      color: 'bg-orange-50',
+      accent: 'text-orange-600',
+      logoColor: 'bg-orange-500',
+      coach: 'Ramesh Bhatta',
+      squad: [
+        { name: 'Aarav Sharma (C)', role: 'Batsman' },
+        { name: 'Bibek Thapa', role: 'Bowler' },
+        { name: 'Rohit Paudel', role: 'All-Rounder' },
+        { name: 'Kushal Bhurtel', role: 'WK' },
+        { name: 'Dipendra Airee', role: 'Batsman' },
+        { name: 'Sandeep Lamichhane', role: 'Bowler' },
+        { name: 'Sompal Kami', role: 'All-Rounder' },
+        { name: 'Karan KC', role: 'All-Rounder' },
+        { name: 'Gyanendra Malla', role: 'Batsman' },
+        { name: 'Paras Khadka', role: 'All-Rounder' },
+        { name: 'Binod Das', role: 'Bowler' },
+        { name: 'Sharad Vesawkar', role: 'Batsman' },
+        { name: 'Basant Regmi', role: 'Bowler' },
+        { name: 'Shakti Gauchan', role: 'Bowler' },
+        { name: 'Subash Khakurel', role: 'WK' },
+      ],
     },
-    { 
-        id: 2, 
-        name: "Lalitpur Warriors", 
-        school: "St. Xavier's", 
-        color: "bg-blue-50", 
-        accent: "text-blue-600",
-        logoColor: "bg-blue-600",
-        coach: "Sunil Shrestha",
-        squad: [
-            { name: "Player One (C)", role: "Batsman" },
-            { name: "Player Two", role: "Bowler" },
-            { name: "Player Three", role: "All-Rounder" },
-        ]
+    {
+      id: 2,
+      name: 'Lalitpur Warriors',
+      school: "St. Xavier's",
+      color: 'bg-blue-50',
+      accent: 'text-blue-600',
+      logoColor: 'bg-blue-600',
+      coach: 'Sunil Shrestha',
+      squad: [
+        { name: 'Player One (C)', role: 'Batsman' },
+        { name: 'Player Two', role: 'Bowler' },
+        { name: 'Player Three', role: 'All-Rounder' },
+      ],
     },
-    { 
-        id: 3, 
-        name: "Bhaktapur Riders", 
-        school: "Little Angels", 
-        color: "bg-red-50", 
-        accent: "text-red-600",
-        logoColor: "bg-red-500",
-        coach: "Anil Gurung",
-        squad: [
-            { name: "Player A (C)", role: "Batsman" },
-            { name: "Player B", role: "Bowler" },
-        ]
+    {
+      id: 3,
+      name: 'Bhaktapur Riders',
+      school: 'Little Angels',
+      color: 'bg-red-50',
+      accent: 'text-red-600',
+      logoColor: 'bg-red-500',
+      coach: 'Anil Gurung',
+      squad: [
+        { name: 'Player A (C)', role: 'Batsman' },
+        { name: 'Player B', role: 'Bowler' },
+      ],
     },
-    { 
-        id: 4, 
-        name: "Himalayan Titans", 
-        school: "Galaxy Public", 
-        color: "bg-slate-50", 
-        accent: "text-slate-800",
-        logoColor: "bg-slate-800",
-        coach: "Binod Das",
-        squad: []
+    {
+      id: 4,
+      name: 'Himalayan Titans',
+      school: 'Galaxy Public',
+      color: 'bg-slate-50',
+      accent: 'text-slate-800',
+      logoColor: 'bg-slate-800',
+      coach: 'Binod Das',
+      squad: [],
     },
-    { 
-        id: 5, 
-        name: "Valley Thunder", 
-        school: "Siddhartha School", 
-        color: "bg-yellow-50", 
-        accent: "text-yellow-600",
-        logoColor: "bg-yellow-500",
-        coach: "Paras Khadka",
-        squad: []
+    {
+      id: 5,
+      name: 'Valley Thunder',
+      school: 'Siddhartha School',
+      color: 'bg-yellow-50',
+      accent: 'text-yellow-600',
+      logoColor: 'bg-yellow-500',
+      coach: 'Paras Khadka',
+      squad: [],
     },
-    { 
-        id: 6, 
-        name: "Peak Panthers", 
-        school: "Modern School", 
-        color: "bg-purple-50", 
-        accent: "text-purple-600",
-        logoColor: "bg-purple-600",
-        coach: "Gyanendra Malla",
-        squad: []
+    {
+      id: 6,
+      name: 'Peak Panthers',
+      school: 'Modern School',
+      color: 'bg-purple-50',
+      accent: 'text-purple-600',
+      logoColor: 'bg-purple-600',
+      coach: 'Gyanendra Malla',
+      squad: [],
     },
   ];
 
@@ -106,9 +106,7 @@ export const Teams = () => {
           <h2 className="text-blue-600 font-bold uppercase tracking-widest mb-2 text-sm">
             The Competitors
           </h2>
-          <h3 className="text-4xl font-black text-slate-900">
-            All Teams
-          </h3>
+          <h3 className="text-4xl font-black text-slate-900">All Teams</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -177,9 +175,7 @@ export const Teams = () => {
 
                 {/* Footer */}
                 <div className="p-6 border-t bg-slate-50">
-                  <Button className="w-full rounded-xl font-bold">
-                    Close
-                  </Button>
+                  <Button className="w-full rounded-xl font-bold">Close</Button>
                 </div>
               </DialogContent>
             </Dialog>

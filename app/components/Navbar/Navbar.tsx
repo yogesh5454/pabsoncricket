@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-  import { useRouter, usePathname } from "next/navigation"; // add this
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation'; // add this
 
-import pabLogo from "../../Logo/pablogo.png";
+import pabLogo from '../../Logo/pablogo.png';
 
 interface NavLink {
   name: string;
@@ -16,15 +16,15 @@ interface NavLink {
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("hero"); // NEW
+  const [activeSection, setActiveSection] = useState<string>('hero'); // NEW
 
   const navLinks: NavLink[] = [
-    { name: "Home", href: "hero" },
-    { name: "Teams", href: "teams" },
-    { name: "Fixtures", href: "schedule" },
-    { name: "Result", href: "results" },
-    { name: "Gallery", href: "gallery" },
-    { name: "Contact", href: "contact" },
+    { name: 'Home', href: 'hero' },
+    { name: 'Teams', href: 'teams' },
+    { name: 'Fixtures', href: 'schedule' },
+    { name: 'Result', href: 'results' },
+    { name: 'Gallery', href: 'gallery' },
+    { name: 'Contact', href: 'contact' },
   ];
 
   // Scroll handler for navbar background and active section
@@ -47,44 +47,41 @@ export const Navbar: React.FC = () => {
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const router = useRouter();
+  const pathname = usePathname();
 
-const router = useRouter();
-const pathname = usePathname();
-
-const handleScrollTo = (id: string) => {
-  if (pathname !== "/") {
-    // Navigate to home first, then scroll
-    router.push(`/#${id}`); // Next.js automatically preserves hash scroll
-    setIsOpen(false);
-  } else {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleScrollTo = (id: string) => {
+    if (pathname !== '/') {
+      // Navigate to home first, then scroll
+      router.push(`/#${id}`); // Next.js automatically preserves hash scroll
       setIsOpen(false);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setIsOpen(false);
+      }
     }
-  }
-};
-
+  };
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-md py-2"
-          : "bg-transparent py-4"
+          ? 'bg-white/90 backdrop-blur-md shadow-md py-2'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-
           {/* LOGO */}
           <div
             className="flex items-center gap-3 cursor-pointer"
-            onClick={() => handleScrollTo("hero")}
+            onClick={() => handleScrollTo('hero')}
           >
             <Image
               src={pabLogo}
@@ -97,7 +94,7 @@ const handleScrollTo = (id: string) => {
 
             <div
               className={`flex flex-col transition-opacity duration-300 ${
-                scrolled ? "opacity-100" : "opacity-0 md:opacity-100"
+                scrolled ? 'opacity-100' : 'opacity-0 md:opacity-100'
               }`}
             >
               <span className="text-lg font-black tracking-tight text-slate-900 leading-none">
@@ -117,8 +114,8 @@ const handleScrollTo = (id: string) => {
                 onClick={() => handleScrollTo(link.href)}
                 className={`text-sm font-bold uppercase tracking-wide transition-colors ${
                   activeSection === link.href
-                    ? "text-red-600"
-                    : "text-slate-600 hover:text-red-600"
+                    ? 'text-red-600'
+                    : 'text-slate-600 hover:text-red-600'
                 }`}
               >
                 {link.name}
@@ -141,7 +138,7 @@ const handleScrollTo = (id: string) => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             className="md:hidden bg-white border-t border-slate-100 shadow-xl overflow-hidden"
@@ -153,8 +150,8 @@ const handleScrollTo = (id: string) => {
                   onClick={() => handleScrollTo(link.href)}
                   className={`block w-full text-left text-lg font-bold px-4 py-3 rounded-xl transition-all ${
                     activeSection === link.href
-                      ? "text-red-600"
-                      : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
+                      ? 'text-red-600'
+                      : 'text-slate-700 hover:text-red-600 hover:bg-slate-50'
                   }`}
                 >
                   {link.name}

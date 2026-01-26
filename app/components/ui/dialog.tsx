@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
-import { cn } from "./utils";
+import * as React from 'react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { X } from 'lucide-react';
+import { cn } from './utils';
 function Dialog(props: React.ComponentProps<typeof DialogPrimitive.Root>) {
   return <DialogPrimitive.Root {...props} />;
 }
@@ -27,7 +27,7 @@ function DialogOverlay({
   return (
     <DialogPrimitive.Overlay
       className={cn(
-        "fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out",
+        'fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out',
         className
       )}
       {...props}
@@ -45,7 +45,7 @@ function DialogContent({
       <DialogOverlay />
       <DialogPrimitive.Content
         className={cn(
-          "fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-xl",
+          'fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-xl',
           className
         )}
         {...props}
@@ -60,25 +60,22 @@ function DialogContent({
   );
 }
 
-function DialogHeader({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={cn("flex flex-col gap-2 text-left", className)}
+      className={cn('flex flex-col gap-2 text-left', className)}
       {...props}
     />
   );
 }
 
-function DialogFooter({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function DialogFooter({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={cn("flex flex-col-reverse sm:flex-row sm:justify-end gap-2", className)}
+      className={cn(
+        'flex flex-col-reverse sm:flex-row sm:justify-end gap-2',
+        className
+      )}
       {...props}
     />
   );
@@ -87,12 +84,7 @@ function DialogFooter({
 function DialogTitle(
   props: React.ComponentProps<typeof DialogPrimitive.Title>
 ) {
-  return (
-    <DialogPrimitive.Title
-      className="text-lg font-bold"
-      {...props}
-    />
-  );
+  return <DialogPrimitive.Title className="text-lg font-bold" {...props} />;
 }
 
 function DialogDescription(

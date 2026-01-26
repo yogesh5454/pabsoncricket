@@ -1,18 +1,37 @@
-import React from "react";
-import { Shield, Star, Award, Zap } from "lucide-react";
+import React from 'react';
+import { Shield, Star, Award, Zap } from 'lucide-react';
 
 export const Sponsors = () => {
   const sponsors = [
-    { name: "Global IME Bank", role: "Banking Partner", color: "bg-red-600", icon: Shield },
-    { name: "Goldstar", role: "Footwear Partner", color: "bg-slate-900", icon: Zap },
-    { name: "DishHome", role: "Broadcast Partner", color: "bg-yellow-500", icon: Star },
-    { name: "CG Foods", role: "Nutrition Partner", color: "bg-orange-500", icon: Award },
+    {
+      name: 'Global IME Bank',
+      role: 'Banking Partner',
+      color: 'bg-red-600',
+      icon: Shield,
+    },
+    {
+      name: 'Goldstar',
+      role: 'Footwear Partner',
+      color: 'bg-slate-900',
+      icon: Zap,
+    },
+    {
+      name: 'DishHome',
+      role: 'Broadcast Partner',
+      color: 'bg-yellow-500',
+      icon: Star,
+    },
+    {
+      name: 'CG Foods',
+      role: 'Nutrition Partner',
+      color: 'bg-orange-500',
+      icon: Award,
+    },
   ];
 
   return (
     <section id="sponsors" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-blue-600 font-bold uppercase tracking-widest mb-2 text-sm">
@@ -30,7 +49,6 @@ export const Sponsors = () => {
           </p>
 
           <div className="max-w-4xl mx-auto bg-white border-2 border-slate-100 p-16 rounded-[3rem] shadow-2xl flex flex-col md:flex-row items-center justify-center gap-8 hover:scale-105 transition-transform duration-500 cursor-pointer group">
-            
             {/* Placeholder Logo */}
             <div className="flex items-center justify-center w-24 h-24 bg-blue-900 rounded-2xl group-hover:rotate-12 transition-transform duration-500">
               <Shield className="h-12 w-12 text-white" />

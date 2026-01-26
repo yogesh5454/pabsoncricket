@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Button } from "@/app/components/ui/button";
-import { ArrowUpRight, Instagram } from "lucide-react";
-import Link from "next/link";
+import React from 'react';
+import { Button } from '@/app/components/ui/button';
+import { ArrowUpRight, Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 type GalleryItem = {
   id: number;
@@ -18,14 +18,47 @@ type GalleryProps = {
 
 export const Gallery = ({ showAll = false }: GalleryProps) => {
   const allItems: GalleryItem[] = [
-    { id: 1, title: "Opening Ceremony", featured: true, imageUrl: "https://picsum.photos/600/600?random=1" },
-    { id: 2, title: "Match Moment 1", imageUrl: "https://picsum.photos/300/300?random=2" },
-    { id: 3, title: "Match Moment 2", imageUrl: "https://picsum.photos/300/300?random=3" },
-    { id: 4, title: "Highlight 1", imageUrl: "https://picsum.photos/300/300?random=4" },
-    { id: 5, title: "Highlight 2", imageUrl: "https://picsum.photos/300/300?random=5" },
-    { id: 6, title: "Closing Ceremony", imageUrl: "https://picsum.photos/300/300?random=6" },
-    { id: 7, title: "Extra Highlight 1", imageUrl: "https://picsum.photos/300/300?random=7" },
-    { id: 8, title: "Extra Highlight 2", imageUrl: "https://picsum.photos/300/300?random=8" },
+    {
+      id: 1,
+      title: 'Opening Ceremony',
+      featured: true,
+      imageUrl: 'https://picsum.photos/600/600?random=1',
+    },
+    {
+      id: 2,
+      title: 'Match Moment 1',
+      imageUrl: 'https://picsum.photos/300/300?random=2',
+    },
+    {
+      id: 3,
+      title: 'Match Moment 2',
+      imageUrl: 'https://picsum.photos/300/300?random=3',
+    },
+    {
+      id: 4,
+      title: 'Highlight 1',
+      imageUrl: 'https://picsum.photos/300/300?random=4',
+    },
+    {
+      id: 5,
+      title: 'Highlight 2',
+      imageUrl: 'https://picsum.photos/300/300?random=5',
+    },
+    {
+      id: 6,
+      title: 'Closing Ceremony',
+      imageUrl: 'https://picsum.photos/300/300?random=6',
+    },
+    {
+      id: 7,
+      title: 'Extra Highlight 1',
+      imageUrl: 'https://picsum.photos/300/300?random=7',
+    },
+    {
+      id: 8,
+      title: 'Extra Highlight 2',
+      imageUrl: 'https://picsum.photos/300/300?random=8',
+    },
   ];
 
   const items = showAll ? allItems : allItems.slice(0, 5);
@@ -33,13 +66,13 @@ export const Gallery = ({ showAll = false }: GalleryProps) => {
   return (
     <section
       id="gallery"
-      className={`py-24 ${showAll ? "min-h-screen py-32" : "bg-slate-50"}`}
+      className={`py-24 ${showAll ? 'min-h-screen py-32' : 'bg-slate-50'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
           className={`flex flex-col md:flex-row justify-between items-end mb-12 gap-4 ${
-            showAll ? "mb-16" : ""
+            showAll ? 'mb-16' : ''
           }`}
         >
           <div>
@@ -47,7 +80,7 @@ export const Gallery = ({ showAll = false }: GalleryProps) => {
               Media
             </h2>
             <h3 className="text-4xl md:text-5xl font-black text-slate-900">
-              {showAll ? "Full Gallery" : "Highlights"}
+              {showAll ? 'Full Gallery' : 'Highlights'}
             </h3>
           </div>
           {!showAll && (
@@ -61,8 +94,8 @@ export const Gallery = ({ showAll = false }: GalleryProps) => {
         <div
           className={`grid gap-4 ${
             showAll
-              ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[250px]"
-              : "grid-cols-2 md:grid-cols-4 grid-rows-2 h-[600px]"
+              ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[250px]'
+              : 'grid-cols-2 md:grid-cols-4 grid-rows-2 h-[600px]'
           }`}
         >
           {items.map((item) => {
@@ -72,8 +105,8 @@ export const Gallery = ({ showAll = false }: GalleryProps) => {
                   key={item.id}
                   className={`relative rounded-3xl overflow-hidden shadow-lg flex items-center justify-center ${
                     showAll
-                      ? "col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 h-full"
-                      : "col-span-2 row-span-2"
+                      ? 'col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 h-full'
+                      : 'col-span-2 row-span-2'
                   }`}
                 >
                   <img

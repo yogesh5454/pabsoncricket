@@ -1,16 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Results } from "@/app/components/Results/Results"; // adjust path if needed
-import { Navbar } from "../components/Navbar/Navbar";
-import Link from "next/link";
-import { Button } from "../components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import React from 'react';
+import { Results } from '@/app/components/Results/Results'; // adjust path if needed
+import { Navbar } from '../components/Navbar/Navbar';
+import Link from 'next/link';
+import { Button } from '../components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export default function ResultsPage() {
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
-      
       {/* Navbar */}
       <Navbar />
 
@@ -30,7 +29,6 @@ export default function ResultsPage() {
       <div className="mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Results showAll />
       </div>
-      
     </main>
   );
 }

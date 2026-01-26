@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -8,16 +8,48 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/app/components/ui/table";
+} from '@/app/components/ui/table';
 
 export const PointsTable = () => {
   const tableData = [
-    { pos: 1, team: "Kathmandu Lions", p: 5, w: 4, l: 1, pts: 8, nrr: "+1.250" },
-    { pos: 2, team: "Lalitpur Warriors", p: 5, w: 3, l: 2, pts: 6, nrr: "+0.850" },
-    { pos: 3, team: "Bhaktapur Riders", p: 5, w: 3, l: 2, pts: 6, nrr: "+0.450" },
-    { pos: 4, team: "Himalayan Titans", p: 5, w: 2, l: 3, pts: 4, nrr: "-0.120" },
-    { pos: 5, team: "Valley Thunder", p: 5, w: 2, l: 3, pts: 4, nrr: "-0.550" },
-    { pos: 6, team: "Peak Panthers", p: 5, w: 1, l: 4, pts: 2, nrr: "-1.100" },
+    {
+      pos: 1,
+      team: 'Kathmandu Lions',
+      p: 5,
+      w: 4,
+      l: 1,
+      pts: 8,
+      nrr: '+1.250',
+    },
+    {
+      pos: 2,
+      team: 'Lalitpur Warriors',
+      p: 5,
+      w: 3,
+      l: 2,
+      pts: 6,
+      nrr: '+0.850',
+    },
+    {
+      pos: 3,
+      team: 'Bhaktapur Riders',
+      p: 5,
+      w: 3,
+      l: 2,
+      pts: 6,
+      nrr: '+0.450',
+    },
+    {
+      pos: 4,
+      team: 'Himalayan Titans',
+      p: 5,
+      w: 2,
+      l: 3,
+      pts: 4,
+      nrr: '-0.120',
+    },
+    { pos: 5, team: 'Valley Thunder', p: 5, w: 2, l: 3, pts: 4, nrr: '-0.550' },
+    { pos: 6, team: 'Peak Panthers', p: 5, w: 1, l: 4, pts: 2, nrr: '-1.100' },
   ];
 
   return (
@@ -27,9 +59,7 @@ export const PointsTable = () => {
           <h2 className="text-blue-600 font-bold uppercase tracking-widest mb-2 text-sm">
             Standings
           </h2>
-          <h3 className="text-4xl font-black text-slate-900">
-            Points Table
-          </h3>
+          <h3 className="text-4xl font-black text-slate-900">Points Table</h3>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-xl">

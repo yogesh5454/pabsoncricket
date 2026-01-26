@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Gallery } from "../components/Gallery/Gallery";
-import Link from "next/link";
-import { Button } from "../components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import React from 'react';
+import { Navbar } from '../components/Navbar/Navbar';
+import { Gallery } from '../components/Gallery/Gallery';
+import Link from 'next/link';
+import { Button } from '../components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export default function GalleryPage() {
   return (
