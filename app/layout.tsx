@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: 'https://pabsoncricketleague.com/pablogo.ico',
-    shortcut: 'https://pabsoncricketleague.com/favicon.ico',
+    shortcut: 'https://pabsoncricketleague.com/pablogo.ico',
   },
 
   openGraph: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'Pabson Cricket League',
     images: [
       {
-        url: 'https://pabsoncricketleague.com/pablogo.png',
+        url: 'https://pabsoncricketleague.com/pablogo.ico',
         width: 1200,
         height: 630,
         alt: 'Pabson Cricket League',
