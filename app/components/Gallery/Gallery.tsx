@@ -74,13 +74,13 @@ export const Gallery = ({ showAll = false }: GalleryProps) => {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full font-bold text-xs mb-2">
               <GalleryHorizontal className="h-3 w-3" />
-              <span>MATCH RESULTS</span>
+              <span>Match Gallery</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-1">
-              {showAll ? 'All Results' : 'Recent Results'}
+              {showAll ? 'Best Moments' : 'Recent Uploads'}
             </h2>
             <p className="text-slate-600 text-sm max-w-2xl mx-auto">
-              Stay updated with the latest match outcomes and highlights
+              Relive the best moments, highlights, and behind-the-scenes action
             </p>
           </div>
           <div className='pb-5 text-right'>
