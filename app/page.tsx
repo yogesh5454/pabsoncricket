@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import { Hero } from './components/Hero/Hero';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
@@ -10,10 +11,22 @@ import { About } from './components/About/About';
 import { Gallery } from './components/Gallery/Gallery';
 import { Contact } from './components/Contact/Contact';
 import { Results } from './components/Results/Results';
+import NewsPopup from './components/News/NewsPopup';
 
 const Home: React.FC = () => {
+  const [showNews, setShowNews] = useState(true); // control popup
+
+  const newsImages = [
+    '/news/news1.jpeg',
+    '/news/news2.jpeg',
+    '/news/news3.jpeg',
+  ];
+
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+      {/* News Popup */}
+      {showNews && <NewsPopup images={newsImages} />}
+
       <Navbar />
 
       {/* Sections with IDs for smooth scrolling */}

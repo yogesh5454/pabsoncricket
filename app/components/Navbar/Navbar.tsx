@@ -76,11 +76,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-2'
-          : 'bg-transparent py-4'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-white/90 backdrop-blur-md shadow-md py-2'
+        : 'bg-transparent py-4'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -99,9 +98,8 @@ export const Navbar: React.FC = () => {
             />
 
             <div
-              className={`flex flex-col transition-opacity duration-300 ${
-                scrolled ? 'opacity-100' : 'opacity-0 md:opacity-100'
-              }`}
+              className={`flex flex-col transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 md:opacity-100'
+                }`}
             >
               <span className="text-lg font-black tracking-tight text-slate-900 leading-none">
                 PABSON <span className="text-red-600">U-15</span>
@@ -118,15 +116,25 @@ export const Navbar: React.FC = () => {
               <button
                 key={link.name}
                 onClick={() => handleScrollTo(link.href)}
-                className={`text-sm font-bold uppercase tracking-wide transition-colors ${
-                  activeSection === link.href
-                    ? 'text-red-600'
-                    : 'text-slate-600 hover:text-red-600'
-                }`}
+                className={`text-sm font-bold uppercase tracking-wide transition-colors ${activeSection === link.href
+                  ? 'text-red-600'
+                  : 'text-slate-600 hover:text-red-600'
+                  }`}
               >
                 {link.name}
               </button>
+
             ))}
+            <button
+              onClick={() => {
+                // Reload the current page
+                window.location.reload();
+              }}
+              className={'text-sm font-bold uppercase tracking-wide transition-colors text-slate-600 hover:text-red-600'}
+
+            >
+              News
+            </button>
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -154,19 +162,28 @@ export const Navbar: React.FC = () => {
                 <button
                   key={link.name}
                   onClick={() => handleScrollTo(link.href)}
-                  className={`block w-full text-left text-lg font-bold px-4 py-3 rounded-xl transition-all ${
-                    activeSection === link.href
-                      ? 'text-red-600'
-                      : 'text-slate-700 hover:text-red-600 hover:bg-slate-50'
-                  }`}
+                  className={`block w-full text-left text-lg font-bold px-4 py-3 rounded-xl transition-all ${activeSection === link.href
+                    ? 'text-red-600'
+                    : 'text-slate-700 hover:text-red-600 hover:bg-slate-50'
+                    }`}
                 >
                   {link.name}
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  // Reload the current page
+                  window.location.reload();
+                }}
+                className={'block w-full text-left text-lg font-bold px-4 py-3 rounded-xl transition-all text-slate-700 hover:text-red-600 hover:bg-slate-50'}
+
+              >
+                News
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </nav >
   );
 };
