@@ -16,8 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://pabsoncricketleague.com'),
 
   title: {
-    default:
-      'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
+    default: 'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
     template: '%s | Pabson Cricket League',
   },
 
@@ -60,8 +59,11 @@ export const metadata: Metadata = {
 
   /** ✅ FAVICONS & APP ICONS */
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
+    // Google cares about the .ico specifically
+    icon: '/favicon.ico',
+    // Additional PNGs for other platforms
+    shortcut: [
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
@@ -73,8 +75,7 @@ export const metadata: Metadata = {
 
   /** ✅ OPEN GRAPH */
   openGraph: {
-    title:
-      'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
+    title: 'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
     description:
       'Official website of Pabson Cricket League — a school and under-15 cricket league in Nepal featuring youth teams, fixtures, results and highlights.',
     url: 'https://pabsoncricketleague.com',
@@ -94,24 +95,17 @@ export const metadata: Metadata = {
   /** ✅ TWITTER */
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Pabson Cricket League | School & Under-15 Cricket League',
+    title: 'Pabson Cricket League | School & Under-15 Cricket League',
     description:
       'Follow fixtures, results and highlights from Nepal’s leading school and under-15 cricket league.',
     images: ['/android-chrome-512x512.png'],
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
