@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronRight, Calendar, MapPin } from 'lucide-react';
-import Link from 'next/link';
+import { ChevronRight, Calendar, MapPin, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
+import { useState } from 'react';
+import NewsPopup from '../News/NewsPopup';
+
 export const Hero = () => {
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -12,8 +13,21 @@ export const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+  const images = [
+    'province/1.jpeg',
+    'province/2.jpeg',
+    'province/3.jpeg',
+    'province/4.jpeg',
+    'province/5.jpeg',
+    'province/6.jpeg',
+    'province/7.jpeg',
+
+  ];
+  const [openPop, setOpenPop] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-50">
+
+      <NewsPopup images={images} open={openPop} onClose={() => setOpenPop(false)}/>
       {/* Background Shapes */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
@@ -28,7 +42,14 @@ export const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className='flex items-center justify-center'>
+
+          <Button onClick={()=>{setOpenPop(true)}} variant="outline" className="text-white hover:text-gray-300" >
+            View Provincial Team Selection Rules and Regulation <ArrowRight />
+          </Button>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
           {/* Text Content */}
           <motion.div
             className="lg:col-span-6 text-center lg:text-left"
@@ -36,11 +57,13 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+
             <div className="inline-flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-              <span className="text-slate-600 text-xs font-bold uppercase tracking-widest">
+              {/* <span className="text-slate-600 text-xs font-bold uppercase tracking-widest">
                 Season 2082 • Live Now
-              </span>
+              </span> */}
+
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight">
@@ -120,9 +143,10 @@ export const Hero = () => {
               <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white rotate-3 hover:rotate-0 transition-all duration-500 z-10">
                 {/* Using standard img tag to prevent Next.js fetchPriority warnings in this environment */}
                 <img
-                  src="https://images.unsplash.com/photo-1685541001104-91fe7ae1d8e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGNyaWNrZXQlMjB0ZWFtJTIwa2lkcyUyMHBsYXlpbmclMjBjcmlja2V0fGVufDF8fHx8MTc2OTA4NTQ4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+
+                  src="/home.png"
                   alt="Nepali Cricket Stadium Crowd"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-auto h-auto object-fill"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>

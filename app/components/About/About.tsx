@@ -6,9 +6,9 @@ import { Shield, Star, Award, Target, Image } from 'lucide-react';
 
 export const About = () => {
   const images = [
-    { label: 'Training Session', height: 'h-40 md:h-48' },
-    { label: 'Match Crowd', height: 'h-40 md:h-48' },
-    { label: 'Victory Moment', height: 'h-80 md:h-[26rem]' },
+    { label: 'Training Session', height: 'h-40 md:h-48', src:'/three/three_1.jpeg' },
+    { label: 'Match Crowd', height: 'h-40 md:h-48', src:'/three/three_3.jpeg' },
+    { label: 'Victory Moment', height: 'h-80 md:h-[26rem]', src:'/three/three_2.jpeg' },
   ];
 
   return (
@@ -75,27 +75,21 @@ export const About = () => {
             <div className="relative z-10 grid grid-cols-2 gap-4 items-center">
               <div className="space-y-4 transform translate-y-8 md:translate-y-12">
                 {images.slice(0, 2).map((img, i) => (
-                  <div
+                  <img
                     key={i}
-                    className={`w-full ${img.height} rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400`}
-                  >
-                    <Image className="h-6 w-6 mb-2" />
-                    <span className="text-xs font-bold uppercase">
-                      {img.label}
-                    </span>
-                  </div>
+                    className={`w-full ${img.height} object-cover  rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400`}
+                    src={img.src}
+                  />
+                 
                 ))}
               </div>
 
               <div>
-                <div
-                  className={`w-full ${images[2].height} rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400`}
-                >
-                  <Image className="h-8 w-8 mb-2" />
-                  <span className="text-xs font-bold uppercase">
-                    {images[2].label}
-                  </span>
-                </div>
+                <img
+                  className={`w-auto ${images[2].height} rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-slate-400`}
+                  src={images[2].src}
+                />
+                  
               </div>
             </div>
 
