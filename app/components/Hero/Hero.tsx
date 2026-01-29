@@ -42,9 +42,9 @@ export const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center pt-4'>
 
-          <Button onClick={()=>{setOpenPop(true)}} variant="outline" className="text-white hover:text-gray-300" >
+          <Button onClick={()=>{setOpenPop(true)}}  className="text-white hover:text-gray-300 bg-black" >
             View Provincial Team Selection Rules and Regulation <ArrowRight />
           </Button>
         </div>
@@ -57,14 +57,14 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-
+{/* 
             <div className="inline-flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-              {/* <span className="text-slate-600 text-xs font-bold uppercase tracking-widest">
+              <span className="text-slate-600 text-xs font-bold uppercase tracking-widest">
                 Season 2082 • Live Now
-              </span> */}
+              </span>
 
-            </div>
+            </div> */}
 
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight">
               NEPAL'S PREMIER <br />
