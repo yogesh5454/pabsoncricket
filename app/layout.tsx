@@ -13,31 +13,52 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Pabson Cricket League | School Cricket Tournament in Nepal',
+  metadataBase: new URL('https://pabsoncricketleague.com'),
+
+  // ✅ Title template helps SEO
+  title: {
+    default: 'Pabson Cricket League | School Cricket Tournament in Nepal',
+    template: '%s | Pabson Cricket League',
+  },
+
   description:
-    'Pabson Cricket League is a premier school-level cricket tournament showcasing the best young cricketing talent. Follow live scores, match schedules, player stats, and highlights.',
+    'Official Pabson Cricket League website. Follow live scores, fixtures, results, teams and highlights of Nepal’s top school cricket tournament.',
 
   keywords: [
-    'Pabson Cricket',
     'Pabson Cricket League',
     'School Cricket Nepal',
     'Nepal Cricket Tournament',
-    'Pabson League 2026',
     'Cricket Fixtures Nepal',
-    'Cricket Results Pabson',
+    'Pabson League 2026',
   ],
 
-  metadataBase: new URL('https://pabsoncricketleague.com'),
+  // ✅ Canonical
+  alternates: {
+    canonical: '/',
+  },
+
+  // ✅ Robots (important)
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 
   icons: {
-    icon: 'https://pabsoncricketleague.com/pablogo.ico',
-    shortcut: 'https://pabsoncricketleague.com/pablogo.ico',
+    icon: '/pablogo.ico',
+    shortcut: '/pablogo.ico',
   },
 
   openGraph: {
-    title: 'Pabson Cricket League | Live Scores & Fixtures',
+    title: 'Pabson Cricket League',
     description:
-      'Follow live scores, match schedules, player stats, and highlights of the thrilling Pabson Cricket League.',
+      'Live scores, fixtures, results and highlights from Nepal’s leading school cricket tournament.',
     url: 'https://pabsoncricketleague.com',
     siteName: 'Pabson Cricket League',
     images: [
@@ -48,15 +69,16 @@ export const metadata: Metadata = {
         alt: 'Pabson Cricket League',
       },
     ],
+    locale: 'en_US',
     type: 'website',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Pabson Cricket League | Live Scores & Highlights',
+    title: 'Pabson Cricket League',
     description:
-      'Follow live scores, match schedules, player stats, and highlights of the thrilling Pabson Cricket League.',
-    images: ['https://pabsoncricketleague.com/pablogo.png'],
+      'Live scores, fixtures and highlights of Pabson Cricket League.',
+    images: ['/pablogo.png'],
   },
 };
 
