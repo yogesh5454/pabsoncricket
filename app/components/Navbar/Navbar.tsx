@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import pabLogo from '../../Logo/pablogo.png';
+import pabLogo from '../../Logo/pablogo.webp';
 
 interface NavLink {
   name: string;
