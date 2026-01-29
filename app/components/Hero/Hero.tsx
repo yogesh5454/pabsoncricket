@@ -42,12 +42,7 @@ export const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className='flex items-center justify-center pt-4'>
-
-          <Button onClick={()=>{setOpenPop(true)}}  className="text-white hover:text-gray-300 bg-black" >
-            View Provincial Team Selection Rules and Regulation <ArrowRight />
-          </Button>
-        </div>
+       
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Text Content */}
@@ -90,7 +85,11 @@ export const Hero = () => {
                   Match Schedule <ChevronRight className="ml-2 h-5 w-5" />
                 </div>
               </Button>
-              <Button
+               <div className='flex items-center justify-center pt-4'>
+
+          
+        </div>
+              {/* <Button
                 variant="outline"
                 asChild
                 className="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-7 rounded-2xl font-bold text-lg transition-all hover:border-slate-300"
@@ -101,7 +100,20 @@ export const Hero = () => {
                 >
                   Points Table
                 </div>
+              </Button> */}
+              <Button
+                variant="outline"
+                asChild
+                className="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-7 rounded-2xl font-bold text-lg transition-all hover:border-slate-300"
+              >
+                <div
+                   onClick={()=>{setOpenPop(true)}}
+                  className="cursor-pointer"
+                >
+                  Provincial Team Selection
+                </div>
               </Button>
+              
             </div>
 
             <div className="flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200 pt-8">

@@ -77,8 +77,8 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/90 backdrop-blur-md shadow-md py-2'
-        : 'bg-transparent py-4'
+        ? 'bg-white/90 backdrop-blur-md shadow-md '
+        : 'bg-transparent '
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
             />
 
             <div
-              className={`flex flex-col transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 md:opacity-100'
+              className={`flex flex-col transition-opacity duration-300'
                 }`}
             >
               <span className="text-lg font-black tracking-tight text-slate-900 leading-none">
