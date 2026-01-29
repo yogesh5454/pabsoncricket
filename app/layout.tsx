@@ -15,29 +15,46 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://pabsoncricketleague.com'),
 
-  // ✅ Title template helps SEO
   title: {
-    default: 'Pabson Cricket League | School Cricket Tournament in Nepal',
+    default:
+      'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
     template: '%s | Pabson Cricket League',
   },
 
   description:
-    'Official Pabson Cricket League website. Follow live scores, fixtures, results, teams and highlights of Nepal’s top school cricket tournament.',
+    'Pabson Cricket League is a leading school and under-15 cricket league in Nepal. Follow match schedules, results, points table, teams and highlights from Nepal’s growing youth cricket competition.',
 
   keywords: [
+    // Brand
     'Pabson Cricket League',
-    'School Cricket Nepal',
+    'Pabson League',
+    'Pabson Cricket',
+
+    // Core intent
+    'Cricket League Nepal',
+    'School Cricket League Nepal',
+    'Under-15 Cricket League Nepal',
+    'Youth Cricket League Nepal',
+
+    // Tournament-related
     'Nepal Cricket Tournament',
-    'Cricket Fixtures Nepal',
-    'Pabson League 2026',
+    'School Cricket Tournament Nepal',
+    'Under 15 Cricket Tournament Nepal',
+
+    // Search variations
+    'Cricket League in Nepal',
+    'Cricket Tournament Nepal',
+    'Nepal Youth Cricket',
+
+    // Long-tail
+    'School level cricket league in Nepal',
+    'Under 15 school cricket league Nepal',
   ],
 
-  // ✅ Canonical
   alternates: {
     canonical: '/',
   },
 
-  // ✅ Robots (important)
   robots: {
     index: true,
     follow: true,
@@ -56,9 +73,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Pabson Cricket League',
+    title:
+      'Pabson Cricket League | School & Under-15 Cricket League in Nepal',
     description:
-      'Live scores, fixtures, results and highlights from Nepal’s leading school cricket tournament.',
+      'Official website of Pabson Cricket League — a school and under-15 cricket league in Nepal featuring youth teams, fixtures, results and highlights.',
     url: 'https://pabsoncricketleague.com',
     siteName: 'Pabson Cricket League',
     images: [
@@ -75,12 +93,14 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Pabson Cricket League',
+    title:
+      'Pabson Cricket League | School & Under-15 Cricket League',
     description:
-      'Live scores, fixtures and highlights of Pabson Cricket League.',
+      'Follow fixtures, results and highlights from Nepal’s leading school and under-15 cricket league.',
     images: ['/pablogo.png'],
   },
 };
+
 
 export default function RootLayout({
   children,
