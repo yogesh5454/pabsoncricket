@@ -13,6 +13,7 @@ import NewsPopup from './components/News/NewsPopup';
 
 const Home = () => {
   const images = [
+    '/news/news5.jpeg',
     '/news/news4.png',
     '/news/news1.jpeg',
     '/news/news2.jpeg',

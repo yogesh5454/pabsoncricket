@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Download } from 'lucide-react';
 
 interface NewsPopupProps {
   images: string[];
-  open?: boolean; // control from parent (e.g., Navbar click)
-  onClose?: () => void; // callback when popup is closed
+  open?: boolean;
+  onClose?: () => void;
 }
 
 // Singleton flag to show popup only once per session
@@ -17,20 +17,17 @@ const NewsPopup: React.FC<NewsPopupProps> = ({ images, open, onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Function to open popup safely
   const showPopup = () => {
     setIsOpen(true);
     hasNewsPopupShown = true;
   };
 
-  // Open on first page load
   useEffect(() => {
     if (!hasNewsPopupShown && images.length > 0) {
       showPopup();
     }
   }, [images]);
 
-  // Handle controlled open prop (e.g., from Navbar click)
   useEffect(() => {
     if (open) showPopup();
   }, [open]);
@@ -50,6 +47,16 @@ const NewsPopup: React.FC<NewsPopupProps> = ({ images, open, onClose }) => {
     );
   };
 
+  // 🔽 Download current image
+  const downloadImage = () => {
+    const link = document.createElement('a');
+    link.href = images[currentImage];
+    link.download = images[currentImage].split('/').pop() || 'image';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -62,7 +69,7 @@ const NewsPopup: React.FC<NewsPopupProps> = ({ images, open, onClose }) => {
     return () => window.removeEventListener('keydown', handleKey);
   }, [isOpen, currentImage]);
 
-  // Touch swipe for mobile
+  // Touch swipe
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -107,6 +114,14 @@ const NewsPopup: React.FC<NewsPopupProps> = ({ images, open, onClose }) => {
             <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
               {currentImage + 1} / {images.length}
             </div>
+
+            {/* Download Button */}
+            <button
+  onClick={downloadImage}
+  className="absolute top-4 left-4 bg-black/70 p-3 rounded-full text-white hover:text-green-500 transition-colors"
+>
+  <Download size={22} />
+</button>
 
             {/* Close Button */}
             <button
