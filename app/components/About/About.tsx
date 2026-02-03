@@ -7,7 +7,7 @@ import { Shield, Star, Award, Target, Image } from 'lucide-react';
 export const About = () => {
   const images = [
     { label: 'Training Session', height: 'h-40 md:h-48', src:'/three/three_1.jpeg' },
-    { label: 'Match Crowd', height: 'h-40 md:h-48', src:'/three/three_3.jpeg' },
+    { label: 'Match Crowd', height: 'h-40 md:h-48', src:'/home.png' },
     { label: 'Victory Moment', height: 'h-80 md:h-[26rem]', src:'/three/three_2.jpeg' },
   ];
 
