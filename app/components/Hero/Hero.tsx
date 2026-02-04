@@ -14,13 +14,8 @@ export const Hero = () => {
     }
   };
   const images = [
-    'province/1.jpeg',
-    'province/2.jpeg',
-    'province/3.jpeg',
-    'province/4.jpeg',
-    'province/5.jpeg',
-    'province/6.jpeg',
-    'province/7.jpeg',
+    'province/gandaki.jpeg',
+    'province/kathmandu.jpeg',
 
   ];
   const [openPop, setOpenPop] = useState(false);
