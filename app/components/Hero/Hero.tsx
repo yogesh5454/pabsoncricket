@@ -125,7 +125,7 @@ export const Hero = () => {
                   <p className="text-xs font-bold text-slate-400 uppercase">
                     Dates
                   </p>
-                  <p className="font-bold text-slate-900">Magh 24 - Fagun 6</p>
+                  <p className="font-bold text-slate-900">Magh 28 - Fagun 6</p>
                 </div>
               </div>
               <div className="w-px h-10 bg-slate-200"></div>

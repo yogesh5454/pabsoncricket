@@ -12,18 +12,13 @@ import { Results } from './components/Results/Results';
 import NewsPopup from './components/News/NewsPopup';
 
 const Home = () => {
-  const images = [
-    '/news/news5.jpeg',
-    '/news/news4.png',
-    '/news/news1.jpeg',
-    '/news/news2.jpeg',
-    '/news/news3.jpeg',
-  ];
+  // const images = [
+  // ];
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
 
-      <NewsPopup images={images}   />
+      {/* <NewsPopup images={images}   /> */}
       <Navbar />
 
       <section id="hero">
