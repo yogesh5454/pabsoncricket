@@ -20,6 +20,7 @@ export const Hero = () => {
     'province/bagmati.jpeg',
     'province/sudur.jpeg',
     'province/karnali.jpg',
+    'province/lumbini.jpg',
 //hel
 
   ];
