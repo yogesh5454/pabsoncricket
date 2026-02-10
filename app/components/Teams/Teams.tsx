@@ -42,7 +42,6 @@ export const Teams = () => {
         { name: 'Prasanna Jaisi' },
         { name: 'Abhishek Kathayat' },
       ],
-
     },
     {
       id: 2,
@@ -73,14 +72,34 @@ export const Teams = () => {
         { name: 'Prem Gupta' },
       ],
       //head coach: 'Antim Thapa',
-
     },
     {
       id: 3,
       name: 'Madhesh Royals',
       // coach: 'Anil Gurung',
       cardBg: 'bg-purple-50',
-      squad: [{ name: 'Player A (C)' }, { name: 'Player B' }],
+      squad: [
+        { name: 'Nikhil Kumar Mandal' },
+        { name: 'Yuvraj Sah' },
+        { name: 'Salman Malik' },
+        { name: 'Abbu Bakar Samani' },
+        { name: 'Dilraj Yadav' },
+        { name: 'Anup Kunwar' },
+        { name: 'Sameer Dewan' },
+        { name: 'Md. Arman Ali Hawari' },
+        { name: 'Sahwan Ansari' },
+        { name: 'Atab Miya' },
+        { name: 'Sagar Yadav' },
+        { name: 'Priyanshu Kumar Patel' },
+        { name: 'Masum Ansari' },
+        { name: 'Khilraj Sarraf' },
+      ],
+      reservePlayers: [
+        { name: 'Virat Chauhan' },
+        { name: 'Keshav Gupta' },
+        { name: 'Aakash Patel' },
+        { name: 'Mahamad Raihan Alam' },
+      ],
     },
     {
       id: 4,
@@ -170,7 +189,6 @@ export const Teams = () => {
         { name: 'Mithun Budha' },
         { name: 'Bishal Singh' },
       ],
-
     },
     {
       id: 7,
@@ -199,7 +217,6 @@ export const Teams = () => {
         { name: 'Arogya Pokharel' },
         { name: 'Samir Raj pandit' },
       ],
-
     },
     {
       id: 8,
@@ -227,8 +244,7 @@ export const Teams = () => {
         { name: 'Kritartha Basnet' },
         { name: 'Samir Budhathoki' },
       ],
-    }
-
+    },
   ];
 
   return (
@@ -285,7 +301,6 @@ export const Teams = () => {
                         Team Squad
                       </DialogDescription>
                     </DialogHeader>
-
                   </div>
 
                   {/* Squad */}
@@ -336,7 +351,6 @@ export const Teams = () => {
                       </div>
                     )}
                   </div>
-
 
                   <div className="p-6 border-t bg-slate-50">
                     <Button className="w-full rounded-xl font-bold">
