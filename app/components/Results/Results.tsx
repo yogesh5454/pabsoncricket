@@ -19,18 +19,18 @@ export const Results = ({ showAll = false }: { showAll?: boolean }) => {
       venue: 'T.U. Ground',
       link: '#'
     },
-    // {
-    //   id: 2,
-    //   date: 'Magh 28',
-    //   team1: 'Gandaki Eagles',
-    //   team2: 'Kathmandu Capitals',
-    //   score1: '128/7 (17.0 overs)',
-    //   score2: '139/7 (17.0 overs)',
-    //   winner: 'Kathmandu Capitals',
-    //   mom: 'Ramesh Thapa (Kathmandu Capitals) - 75 Runs off 60 Balls* (Not Out)',
-    //   venue: 'T.U. Ground',
-    //   link: '#'
-    // },
+    {
+      id: 2,
+      date: 'Magh 28',
+      team1: 'Gandaki Eagles',
+      team2: 'Kathmandu Capitals',
+      score1: '128/7 (17.0 overs)',
+      score2: '139/7 (17.0 overs)',
+      winner: 'Kathmandu Capitals',
+      mom: 'Tapendra Bista (PABSON Kathmandu) - 5 wickets for 25 runs in 4 overs',
+      venue: 'T.U. Ground',
+      link: '#'
+    },
   ];
 
   const results = showAll ? allResults : allResults.slice(0, 3);
