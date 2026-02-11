@@ -9,28 +9,28 @@ export const Results = ({ showAll = false }: { showAll?: boolean }) => {
   const allResults = [
     {
       id: 1,
-      date: 'Magh 24',
+      date: 'Magh 28',
       team1: 'Bagmati Challengers',
       team2: 'SudurPaschim Rising',
-      score1: '145/4',
-      score2: '140/9',
+      score1: '118/7 (19.2 overs)',
+      score2: '116/10 (20 overs)',
       winner: 'Bagmati Challengers',
-      mom: 'Kamal Shahi',
+      mom: 'Bishal Ayer (PABSON Bagmati) - 60 Runs off 55 Balls* (Not Out)',
       venue: 'T.U. Ground',
       link: '#'
     },
-    {
-      id: 2,
-      date: 'Magh 24',
-      team1: 'Kathmandu Capitals',
-      team2: 'Gandaki Eagles',
-      score1: '162/3',
-      score2: '163/5',
-      winner: 'Gandaki Eagles',
-      mom: 'Ahem Siddiqui',
-      venue: 'T.U. Ground',
-      link: '#'
-    }
+    // {
+    //   id: 2,
+    //   date: 'Magh 28',
+    //   team1: 'Gandaki Eagles',
+    //   team2: 'Kathmandu Capitals',
+    //   score1: '128/7 (17.0 overs)',
+    //   score2: '139/7 (17.0 overs)',
+    //   winner: 'Kathmandu Capitals',
+    //   mom: 'Ramesh Thapa (Kathmandu Capitals) - 75 Runs off 60 Balls* (Not Out)',
+    //   venue: 'T.U. Ground',
+    //   link: '#'
+    // },
   ];
 
   const results = showAll ? allResults : allResults.slice(0, 3);

@@ -1,37 +1,65 @@
 import React from 'react';
-import { Shield, Star, Award, Zap } from 'lucide-react';
 
 export const Sponsors = () => {
-  const sponsors = [
-    {
-      name: 'Global IME Bank',
-      role: 'Banking Partner',
-      color: 'bg-red-600',
-      icon: Shield,
-    },
-    {
-      name: 'Goldstar',
-      role: 'Footwear Partner',
-      color: 'bg-slate-900',
-      icon: Zap,
-    },
-    {
-      name: 'DishHome',
-      role: 'Broadcast Partner',
-      color: 'bg-yellow-500',
-      icon: Star,
-    },
-    {
-      name: 'CG Foods',
-      role: 'Nutrition Partner',
-      color: 'bg-orange-500',
-      icon: Award,
-    },
+  const sponsorLogos = [
+    '/sponsors/11.jpeg',
+    '/sponsors/12.jpeg',
+    '/sponsors/1.jpeg',
+    '/sponsors/2.jpeg',
+    '/sponsors/3.jpeg',
+    '/sponsors/4.jpeg',
+    '/sponsors/5.jpeg',
+    '/sponsors/6.jpeg',
+    '/sponsors/7.jpeg',
+    '/sponsors/8.jpeg',
+    '/sponsors/9.jpeg',
+    '/sponsors/10.jpeg',
+    '/sponsors/11.jpeg',
+    '/sponsors/12.jpeg',
+    '/sponsors/13.jpeg',
+    '/sponsors/14.jpeg',
+    '/sponsors/15.jpeg',
+    '/sponsors/16.png',
+    '/sponsors/17.png',
+    '/sponsors/18.png',
+    '/sponsors/32.png',
+    '/sponsors/19.png',
+    '/sponsors/20.png',
+    '/sponsors/21.png',
+    '/sponsors/22.png',
+    '/sponsors/23.png',
+    '/sponsors/24.png',
+    '/sponsors/25.png',
+    '/sponsors/26.png',
+    '/sponsors/27.png',
+    '/sponsors/28.png',
+    '/sponsors/29.png',
+    '/sponsors/30.png',
+    '/sponsors/31.png',
+
+    
+  ];
+
+  const bgColors = [
+    'bg-slate-100',
+    'bg-blue-50',
+    'bg-yellow-50',
+    'bg-red-50',
+    'bg-green-50',
+    'bg-yellow-50',
+    'bg-blue-50',
+    'bg-slate-50',
+    'bg-green-50',
+    'bg-purple-50',
+    'bg-blue-50',
+    'bg-yellow-50',
+
   ];
 
   return (
-    <section id="sponsors" className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="sponsors" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-blue-600 font-bold uppercase tracking-widest mb-2 text-sm">
@@ -42,54 +70,24 @@ export const Sponsors = () => {
           </h3>
         </div>
 
-        {/* Title Sponsor */}
-        <div className="mb-20">
-          <p className="text-center text-slate-400 font-bold uppercase tracking-widest text-xs mb-6">
-            Title Sponsor
-          </p>
-
-          <div className="max-w-4xl mx-auto bg-white border-2 border-slate-100 p-16 rounded-[3rem] shadow-2xl flex flex-col md:flex-row items-center justify-center gap-8 hover:scale-105 transition-transform duration-500 cursor-pointer group">
-            {/* Placeholder Logo */}
-            <div className="flex items-center justify-center w-24 h-24 bg-blue-900 rounded-2xl group-hover:rotate-12 transition-transform duration-500">
-              <Shield className="h-12 w-12 text-white" />
+        {/* Sponsors Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          {sponsorLogos.map((logo, index) => (
+            <div
+              key={index}
+              className={`flex items-center justify-center p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer ${
+                bgColors[index % bgColors.length]
+              }`}
+            >
+              <img
+                src={logo}
+                alt="Sponsor Logo"
+                className="max-h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+              />
             </div>
-
-            <div className="text-center md:text-left">
-              <span className="block text-5xl md:text-6xl font-black tracking-tighter text-slate-900 leading-none">
-                MAIN <span className="text-blue-900">BRAND</span>
-              </span>
-              <span className="text-slate-400 font-medium tracking-widest uppercase text-sm mt-2 block">
-                The Future of Cricket
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Other Sponsors */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {sponsors.map((sponsor, i) => {
-            const Icon = sponsor.icon;
-            return (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl transition-all cursor-pointer group"
-              >
-                <div
-                  className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 text-white shadow-lg ${sponsor.color} group-hover:scale-110 transition-transform`}
-                >
-                  <Icon className="h-7 w-7" />
-                </div>
-
-                <span className="font-black text-lg text-slate-900 mb-1">
-                  {sponsor.name}
-                </span>
-                <p className="text-slate-400 text-[10px] uppercase font-bold">
-                  {sponsor.role}
-                </p>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

@@ -89,14 +89,14 @@ export const Footer = () => {
                 <Phone className="h-5 w-5 text-blue-900 shrink-0 mt-1" />
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Phone</p>
-                  <p className="text-slate-500 text-sm">+977-1-4XXXXXX</p>
+                  <p className="text-slate-500 text-sm">+977 9851025511</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="h-5 w-5 text-blue-900 shrink-0 mt-1" />
                 <div>
                   <p className="font-bold text-slate-900 text-sm">Email</p>
-                  <p className="text-slate-500 text-sm">info@pcl-u15.com</p>
+                  <p className="text-slate-500 text-sm">kathpabson@gmail.com</p>
                 </div>
               </div>
             </div>
