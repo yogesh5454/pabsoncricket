@@ -37,7 +37,6 @@ export const Sponsors = () => {
     '/sponsors/30.png',
     '/sponsors/31.png',
 
-    
   ];
 
   const bgColors = [

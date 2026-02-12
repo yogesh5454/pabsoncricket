@@ -11,9 +11,9 @@ type ScheduleProps = {
 
 export const Schedule = ({ showAll = false }: ScheduleProps) => {
   const allMatches = [
-    { id: 1, date: '28TH MAGH, 2082', time: '8:00 AM', t1: 'BAGMATI', t2: 'SUDURPASCHIM', liveLink: 'https://www.youtube.com/watch?v=8N0Gp1thfeU', status: 'Live' },
-    { id: 2, date: '28TH MAGH, 2082', time: '1:00 PM', t1: 'KATHMANDU', t2: 'GANDAKI', liveLink: '', status: 'Upcoming' },
-    { id: 3, date: '29TH MAGH, 2082', time: '9:00 AM', t1: 'GANDAKI', t2: 'KOSHI', liveLink: '', status: 'Upcoming' },
+    { id: 1, date: '28TH MAGH, 2082', time: '8:00 AM', t1: 'BAGMATI', t2: 'SUDURPASCHIM', liveLink: 'https://www.youtube.com/watch?v=8N0Gp1thfeU', status: 'Completed' },
+    { id: 2, date: '28TH MAGH, 2082', time: '1:00 PM', t1: 'KATHMANDU', t2: 'GANDAKI', liveLink: '', status: 'Completed' },
+    { id: 3, date: '29TH MAGH, 2082', time: '9:00 AM', t1: 'GANDAKI', t2: 'KOSHI', liveLink: 'https://www.youtube.com/watch?v=hDAhB4xRm6o', status: 'Live' },
     { id: 4, date: '29TH MAGH, 2082', time: '1:00 PM', t1: 'SUDURPASCHIM', t2: 'MADHESH', liveLink: '', status: 'Upcoming' },
     { id: 5, date: '1 FALGUN, 2082', time: '9:00 AM', t1: 'KOSHI', t2: 'LUMBINI', liveLink: '', status: 'Upcoming' },
     { id: 6, date: '1 FALGUN, 2082', time: '1:00 PM', t1: 'MADHESH', t2: 'KARNALI', liveLink: '', status: 'Upcoming' },
@@ -23,7 +23,7 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
     { id: 10, date: '3 FALGUN, 2082', time: '1:00 PM', t1: 'BAGMATI', t2: 'MADHESH', liveLink: '', status: 'Upcoming' },
   ];
 
-  const matches = showAll ? allMatches : allMatches.slice(0, 4);
+  const matches = showAll ? allMatches : allMatches.slice(2, 6);
   const getLogoPath = (name: string) => `/Team/${name.toLowerCase()}.jpeg`;
 
   const getTeamAccent = (name: string) => {
@@ -38,7 +38,7 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4">
-        
+
         <div className="flex flex-col items-center mb-16">
           <h2 className="text-4xl font-black italic tracking-tighter text-slate-900 mb-2">
             PCL <span className="text-red-600">2082</span>
@@ -50,13 +50,13 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
         <div className="space-y-8 md:space-y-6">
           {matches.map((m) => (
             <div key={m.id} className="relative max-w-4xl mx-auto">
-              
+
               {/* Main Container: Stacked on Mobile, Row on Desktop */}
               <div className="flex flex-col md:flex-row items-stretch md:items-center gap-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow rounded-t-lg md:rounded-none">
-                
+
                 {/* Team 1 Banner */}
-                <div className="flex-1 flex items-center bg-slate-50 h-20 md:h-24 border-l-8" 
-                     style={{ borderColor: getTeamAccent(m.t1) }}>
+                <div className="flex-1 flex items-center bg-slate-50 h-20 md:h-24 border-l-8"
+                  style={{ borderColor: getTeamAccent(m.t1) }}>
                   <div className="px-4 md:px-8 flex items-center gap-4 w-full">
                     <img src={getLogoPath(m.t1)} className="h-10 w-10 md:h-14 md:w-14 object-contain" alt="" />
                     <div className="flex flex-col">
@@ -73,7 +73,7 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
 
                 {/* Team 2 Banner - Reversed flex order on mobile for consistency */}
                 <div className="flex-1 flex items-center md:justify-end bg-slate-50 h-20 md:h-24 border-r-8 text-left md:text-right"
-                     style={{ borderColor: getTeamAccent(m.t2) }}>
+                  style={{ borderColor: getTeamAccent(m.t2) }}>
                   <div className="px-4 md:px-8 flex flex-row-reverse md:flex-row items-center justify-end gap-4 w-full">
                     <div className="flex flex-col">
                       <span className="text-[10px] font-bold text-slate-400">TEAM TWO</span>
@@ -88,7 +88,7 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
               <div className="flex justify-between items-center px-4 md:px-6 py-3 md:py-2 bg-slate-100/80 mt-1 rounded-b-lg border-t border-slate-200 md:border-none">
                 <div className="flex items-center gap-3 md:gap-4">
                   <div className="flex items-center gap-1 text-slate-600 font-bold text-[10px] md:text-xs">
-                    <Calendar size={12} className="shrink-0" /> 
+                    <Calendar size={12} className="shrink-0" />
                     <span className="whitespace-nowrap">{m.date}</span>
                   </div>
                   <div className="text-red-600 font-black italic text-[10px] md:text-xs whitespace-nowrap">
@@ -97,6 +97,13 @@ export const Schedule = ({ showAll = false }: ScheduleProps) => {
                 </div>
 
                 <div className="flex items-center gap-2">
+                  {
+                    m.status.toLocaleLowerCase() === 'completed' && (
+                      <div className="flex items-center gap-1 text-blue-600 animate-pulse font-black text-[10px]">
+                        <Circle size={8} fill="currentColor" /> Live
+                      </div>
+                    )
+                  }
                   {m.status.toLowerCase() === 'live' ? (
                     <div className="flex items-center gap-1 text-red-600 animate-pulse font-black text-[10px]">
                       <Circle size={8} fill="currentColor" /> LIVE

@@ -17,7 +17,7 @@ export const Results = ({ showAll = false }: { showAll?: boolean }) => {
       winner: 'Bagmati Challengers',
       mom: 'Bishal Ayer (PABSON Bagmati) - 60 Runs off 55 Balls* (Not Out)',
       venue: 'T.U. Ground',
-      link: '#'
+      link: 'https://www.youtube.com/watch?v=8N0Gp1thfeU'
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ export const Results = ({ showAll = false }: { showAll?: boolean }) => {
       winner: 'Kathmandu Capitals',
       mom: 'Tapendra Bista (PABSON Kathmandu) - 5 wickets for 25 runs in 4 overs',
       venue: 'T.U. Ground',
-      link: '#'
+      link: 'https://www.youtube.com/watch?v=jpcbFiDpJqo'
     },
   ];
 
